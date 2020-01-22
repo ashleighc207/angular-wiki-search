@@ -11,7 +11,6 @@ export class AppComponent {
   constructor(private wikipedia: WikipediaService) {}
   onTermChange(term: string) {
     this.wikipedia.search(term).subscribe((res: any) => {
-      console.log(res.query.search);
       this.pages = res.query.search;
     });
   }
