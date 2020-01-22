@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   flex: 1 1 auto;
+  margin-top: 50px;
 }
 
 .search-form {

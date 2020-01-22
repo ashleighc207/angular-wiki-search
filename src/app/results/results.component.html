@@ -1,1 +1,24 @@
-<p>results works!</p>
+<div class="main-container" *ngIf="pages.length > 0">
+  <table class="results-table">
+    <tr class="results-tr">
+      <th class="results-th">
+        Page
+      </th>
+      <th class="results-th">Snippet</th>
+    </tr>
+    <tr *ngFor="let page of pages" class="results-tr">
+      <td class="results-td">
+        <a [href]="'https://en.wikipedia.org/?curid=' + page.pageid">{{
+          page.title
+        }}</a>
+      </td>
+      <td class="results-td" [innerHtml]="page.snippet"></td>
+    </tr>
+  </table>
+</div>
+
+<div class="main-container" *ngIf="pages.length <= 0">
+  <h4 class="search-heading">
+    Type a search term above and hit enter to search Wikipedia
+  </h4>
+</div>
